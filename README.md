@@ -1,4 +1,4 @@
-# Cara Clone
+# Cara Clone dan Install
 1. Clone Repository ini menggunakan vscode / yang kalian tahu.
 2. Pilih branch sesuai kelompok kalian.
 3. Jalankan command `pip install -r requirements.txt`
