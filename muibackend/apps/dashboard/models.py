@@ -19,7 +19,7 @@ class Fatwa(models.Model):
     lampiran_fatwa = models.FileField(upload_to=upload_to_func)
     keterangan = models.TextField()
     date = models.DateField()
-    uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.title
