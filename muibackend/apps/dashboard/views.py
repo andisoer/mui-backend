@@ -12,14 +12,13 @@ class FatwaListCreateView(generics.ListCreateAPIView):
     queryset = Fatwa.objects.all()
     serializer_class = FatwaSerializer
     parser_classes = (MultiPartParser, FormParser)
-    
-    print("TEST")
 
     def perform_create(self, serializer):
-        print("DEBUG", self.request.user)
-
         # Set the user who uploaded the file
-        serializer.save(uploaded_by=self.request.user)
+        uploaded_by = self.request.user if self.request.user.is_authenticated else None
+
+        # Automatically set the uploaded_by field
+        serializer.save(uploaded_by=uploaded_by)
 
 class FatwaDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Fatwa.objects.all()
