@@ -5,6 +5,7 @@ from .serializers import FatwaSerializer
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 # Create your views here.
 
@@ -12,6 +13,14 @@ class FatwaListCreateView(generics.ListCreateAPIView):
     queryset = Fatwa.objects.all()
     serializer_class = FatwaSerializer
     parser_classes = (MultiPartParser, FormParser)
+
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            # Allow public access for the list view
+            return [AllowAny()]
+        else:
+            # Require authentication for other methods (e.g., POST for create)
+            return [IsAuthenticated()]
 
     def perform_create(self, serializer):
         # Set the user who uploaded the file
