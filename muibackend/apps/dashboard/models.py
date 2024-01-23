@@ -15,8 +15,8 @@ def upload_to_func(instance, filename):
 class Fatwa(models.Model):
     title = models.CharField(max_length=255)
     no_fatwa = models.CharField(max_length=255)
-    thumbnail = models.ImageField(upload_to=upload_to_func)
-    lampiran_fatwa = models.FileField(upload_to=upload_to_func)
+    thumbnail = models.ImageField(upload_to=upload_to_func, null=True, blank=True)
+    lampiran_fatwa = models.FileField(upload_to=upload_to_func, null=True, blank=True)
     keterangan = models.TextField()
     date = models.DateField()
     uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
