@@ -10,7 +10,7 @@ def file_image(instance, filename):
 # Create your models here.
 class Gallery(models.Model):
     Judul = models.CharField(max_length=100)
-    Gambar = models.ImageField(upload_to=file_image, verbose_name='Photo', null=True, blank=True)
+    Gambar = models.ImageField(upload_to=file_image, verbose_name='Photo')
     Deskripsi = models.TextField() 
     def __str__(self):
         return self.Judul
