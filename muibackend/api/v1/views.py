@@ -11,9 +11,9 @@ from django.shortcuts import render
 #     serializer = ItemSerializer(items, many=True)
 #     return JsonResponse(serializer.data, safe=False)
 from rest_framework.viewsets import ModelViewSet
-from apps.dashboard.models import Item
-from api.v1.serializers import ItemSerializer
+from apps.dashboard.models import Gallery
+from api.v1.serializers import GallerySerializer
 
-class ItemViewset(ModelViewSet):
-    queryset = Item.objects.all()
-    serializer_class = ItemSerializer
+class GalleryViewset(ModelViewSet):
+    queryset = Gallery.objects.all()
+    serializer_class = GallerySerializer
