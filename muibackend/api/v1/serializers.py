@@ -1,8 +1,8 @@
 from rest_framework.serializers import ModelSerializer
-from apps.dashboard.models import Item
+from apps.dashboard.models import Konsultasi
 
-class ItemSerializer(ModelSerializer):
+class KonsultasiSerializer(ModelSerializer):
     class Meta:
-        model = Item
-        fields = ['id', 'name','description']
+        model = Konsultasi
+        fields = ['id', 'nama', 'email', 'nomor_telepon', 'topik', 'pesan','date']
     
