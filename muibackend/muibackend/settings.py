@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v)j5+a1g%dep*ss1j5wjs(d2n-5w8svhw0)^8^sxo+y_7-l0qx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.2']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # apps kita sendiri
     'apps.dashboard',
+    'home',
 
 ]
 
@@ -144,10 +145,13 @@ REST_FRAMEWORK = {
         # 'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
     ),
+    # 'DEFAULT_AUTHENTICATION_CLASSES': (
+    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
+    # ),
 
-     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
+    #  'DEFAULT_PERMISSION_CLASSES': (
+    #     'rest_framework.permissions.IsAuthenticated',
+    # ),
 }
 
 from datetime import timedelta
@@ -175,3 +179,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://yourfrontenddomain.com",
 ]
+
+FILE_URL = '/files/'
+FILE_ROOT = BASE_DIR / 'files'

@@ -29,4 +29,5 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     #path('users/', include('django contrib.auth.urls')),
     #path('users/', user_list, name='user-list'),
+    path('api/home/', include('home.urls')),
 ] 
