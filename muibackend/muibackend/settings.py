@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # apps kita sendiri
     'apps.dashboard',
+    'home',
 
 ]
 
@@ -168,3 +169,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:8000",
     "http://yourfrontenddomain.com",
 ]
+
+FILE_URL = '/files/'
+FILE_ROOT = BASE_DIR / 'files'
