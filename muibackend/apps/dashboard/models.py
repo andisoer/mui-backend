@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 import uuid
 
@@ -14,6 +15,16 @@ class Konsultasi(models.Model):
 class Item(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
+
+
+#class User(AbstractUser):
+#    name = models.CharField(max_length=255)
+#    email = models.CharField(max_length=255, unique=True)
+#    password = models.CharField(max_length=255)
+#    username = None
+
+#    USERNAME_FIELD = 'email'
+#    REQUIRED_FIELDS = []
 
 def upload_to_func(instance, filename):
     extension = filename.split('.')[-1]
