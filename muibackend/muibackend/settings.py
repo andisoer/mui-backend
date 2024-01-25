@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # apps kita sendiri
     'apps.dashboard',
+    'home',
 
 ]
 
