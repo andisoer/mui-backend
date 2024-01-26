@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import User
 import uuid
+import os
+from uuid import uuid4
 
 class Konsultasi(models.Model):
     nama = models.CharField(max_length=50)
@@ -26,6 +28,11 @@ class Item(models.Model):
 #    USERNAME_FIELD = 'email'
 #    REQUIRED_FIELDS = []
 
+def file_image(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (str(uuid4()), ext)
+    return os.path.join('static/img', filename)
+
 def upload_to_func(instance, filename):
     extension = filename.split('.')[-1]
     new_filename = f"{uuid.uuid4().hex}.{extension}"
@@ -42,3 +49,10 @@ class Fatwa(models.Model):
 
     def __str__(self):
         return self.title
+
+class Gallery(models.Model):
+    Judul = models.CharField(max_length=100)
+    Gambar = models.ImageField(upload_to=file_image, verbose_name='Photo')
+    Deskripsi = models.TextField() 
+    def __str__(self):
+        return self.Judul
