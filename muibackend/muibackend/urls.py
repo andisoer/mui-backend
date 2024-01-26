@@ -19,14 +19,12 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 #from apps.dashboard.views import user_list
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('apps.dashboard.urls')),
-    path('apia/', include('api.v1.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/', include('api.v1.urls')),
     #path('users/', include('django contrib.auth.urls')),
     #path('users/', user_list, name='user-list'),
     path('api/home/', include('home.urls')),

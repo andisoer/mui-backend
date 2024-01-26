@@ -14,6 +14,13 @@ from rest_framework.viewsets import ModelViewSet
 from apps.dashboard.models import Konsultasi
 from api.v1.serializers import KonsultasiSerializer
 
+from apps.dashboard.models import Gallery
+from api.v1.serializers import GallerySerializer
+
 class KonsultasiViewset(ModelViewSet):
     queryset = Konsultasi.objects.all()
     serializer_class = KonsultasiSerializer
+
+class GalleryViewset(ModelViewSet):
+    queryset = Gallery.objects.all()
+    serializer_class = GallerySerializer

@@ -22,5 +22,7 @@ admin.site.register(Item)
    # list_filter = ('venue', 'event_date')
     #ordering = ('event_date')
 from .models import Konsultasi
+from .models import Gallery
 
 admin.site.register(Konsultasi)
+admin.site.register(Gallery)
