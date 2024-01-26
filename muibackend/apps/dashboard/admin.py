@@ -21,3 +21,6 @@ admin.site.register(Item)
   #  list_display = ('name', 'event_date')
    # list_filter = ('venue', 'event_date')
     #ordering = ('event_date')
+from .models import Konsultasi
+
+admin.site.register(Konsultasi)

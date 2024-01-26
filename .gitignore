@@ -111,3 +111,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 .gitignore
+
+
+# avoid files from local dev being push
+muibackend/files/*
