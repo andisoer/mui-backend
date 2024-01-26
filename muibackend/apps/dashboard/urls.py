@@ -1,10 +1,14 @@
+# apps/dashboard/urls.py
 from django.urls import path
-from .views import LoginAPIView
+from .views import login_view, dashboard  # Ensure correct import
 
 urlpatterns = [
-    path('login/', LoginAPIView.as_view(), name='login'),
+    # path('login/', login_view, name='login'), 
+    # path('dashboard/', dashboard, name='dashboard'),
     # Other URL patterns for your app
 ]
+
+
 
 #     path('dashboard/', include('apps.dashboard.urls')),
      #path('users/', include('django.contrib.auth.urls')),

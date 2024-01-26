@@ -81,6 +81,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'muibackend.wsgi.application'
 
 
