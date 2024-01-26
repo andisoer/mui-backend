@@ -1,14 +1,11 @@
 # apps/dashboard/urls.py
 from django.urls import path
-<<<<<<< HEAD
 from .views import login_view, dashboard  # Ensure correct import
-=======
 from .views import LoginAPIView
 from django.conf import settings
 from django.conf.urls.static import static
 
 from .views import FatwaListCreateView, FatwaDetailView
->>>>>>> 3610b503f420812b8cad7417e93ea7487e9397e6
 
 urlpatterns = [
     # path('login/', login_view, name='login'), 
